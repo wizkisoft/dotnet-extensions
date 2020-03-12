@@ -108,6 +108,19 @@ namespace Wizkisoft.DotNet.Extension.Test
             }
         }
 
+        public class ToPrintableShould
+        {
+            [Fact]
+            public void ReturnAStringRepresentingGivenTypeThatMirrorsHowItWouldLookAsWrittenCode()
+            {
+                var @type = typeof(Func<Foo, List<Foo>>);
+
+                var result = TypeExtension.ToPrintable(@type);
+
+                result.Should().Contain("Func<Foo, List<Foo>>");
+            }
+        }
+
         private abstract class Foo
         {
             public string PublicPropertyFoo { get; set; }
