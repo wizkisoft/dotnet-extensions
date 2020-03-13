@@ -8,4 +8,8 @@
     <Company>Wizkisoft</Company>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Wizkisoft.DotNet.Tab" Version="0.1.0" />
+  </ItemGroup>
+
 </Project>
