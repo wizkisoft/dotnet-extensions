@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using FluentAssertions;
@@ -104,19 +105,6 @@ namespace Wizkisoft.DotNet.Extension.Test
 
                 var publicPropertyNames = result.Select(m => m.Name);
                 publicPropertyNames.Should().NotContain(nameof(Foo.PublicStaticPropertyFoo));
-            }
-        }
-
-        public class BaseTypeShould
-        {
-            [Theory]
-            [InlineData(typeof(Foo))]
-            // [InlineData(typeof(Bar))]
-            public void BeObject(Type t)
-            {
-                var result = t.BaseType;
-
-                result.Should().Be(typeof(object));
             }
         }
 
