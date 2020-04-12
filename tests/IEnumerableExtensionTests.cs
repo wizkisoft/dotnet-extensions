@@ -18,7 +18,7 @@ namespace Wizkisoft.DotNet.Extension.Test
                 var arr = fixture.Create<List<(string Foo, int Bar)>>();
 
                 var counter = 0;
-                Action<(string Foo, int Bar)> act = i => ++counter;
+                void act((string Foo, int Bar) i) => ++counter;
 
                 IEnumerableExtension.ForEach(arr, act);
 
